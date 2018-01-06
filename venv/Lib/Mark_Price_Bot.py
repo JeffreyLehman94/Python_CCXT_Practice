@@ -16,6 +16,7 @@ def getMarketPrice(EXCHANGE, SYMBOL):
         exchange = ccxt.bittrex()
     elif EXCHANGE == "kraken":
         exchange = ccxt.kraken()
+
     markets = exchange.load_markets()
     book = ccxt.poloniex().fetch_order_book(SYMBOL, {'depth': 10})
     # print(book)
